@@ -65,7 +65,7 @@ jobs:
           {
               echo 'FROM fedora:rawhide'
               echo 'RUN dnf -y update'
-              echo 'RUN dnf -y install gcc-c++ git ruby-devel'
+              echo 'RUN dnf -y install gcc-c++ git ruby-devel　glibc-headers'
               echo 'RUN dnf clean all'
               echo 'COPY numo-narray numo-narray'
               echo 'WORKDIR /numo-narray'
