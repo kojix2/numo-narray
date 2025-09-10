@@ -128,6 +128,7 @@ static void
         presorted;
 
  loop:SWAPINIT(a, es);
+    if (es >= sizeof(void*)) swaptype = 2;
     if (n < 7)
         {
             for (pm = (char *) a + es; pm < (char *) a + n * es; pm += es)
