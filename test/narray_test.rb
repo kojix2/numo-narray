@@ -649,4 +649,10 @@ class NArrayTest < Test::Unit::TestCase
     assert_equal(Numo::DFloat[1, Float::NAN, 3].format_to_a,
                  Numo::DFloat.cast(Numo::RObject[1, nil, 3]).format_to_a)
   end
+
+  test "sort_index correctness" do
+    a = Numo::SFloat.new(10).rand_norm
+    idx = a.sort_index
+    assert { a[idx].to_a == a[idx].to_a.sort }
+  end
 end
